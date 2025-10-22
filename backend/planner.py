@@ -1,14 +1,7 @@
 from dotenv import load_dotenv
 from langchain_core.globals import set_debug
-
-try:
-    from langchain_openai import ChatOpenAI
-    from langchain_openai import OpenAIEmbeddings
-except ImportError as e:
-    print(f"Erro ao importar langchain_openai: {e}")
-    print("Execute: pip install --upgrade langchain-openai langchain-core")
-    raise
-
+from langchain_openai import ChatOpenAI
+from langchain_openai import OpenAIEmbeddings
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import CharacterTextSplitter
 from langchain.chains import RetrievalQA
